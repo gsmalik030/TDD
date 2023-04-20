@@ -1,12 +1,12 @@
 class Solver
-  def factorial(no)
+  def factorial(num)
     fctrl = 1
-    if (no == 0)
+    if num.zero?
       fctrl
-    elsif (no < 0)
-      raise RuntimeError.new 'input can not be negative'
+    elsif num.negative?
+      raise 'input can not be negative'
     else
-      for x in 1..no
+      (1..num).each do |x|
         fctrl *= x
       end
       fctrl
@@ -14,15 +14,15 @@ class Solver
   end
 
   def reverse_string(input)
-    input.split('').reverse.join('')
+    input.chars.reverse.join
   end
 
   def fizzbuzz(input)
-    if (input % 3 == 0 && input % 5 == 0)
+    if (input % 3).zero? && (input % 5).zero?
       'fizzbuzz'
-    elsif (input % 3 == 0)
+    elsif (input % 3).zero?
       'fizz'
-    elsif (input % 5 == 0)
+    elsif (input % 5).zero?
       'buzz'
     else
       input.to_s
