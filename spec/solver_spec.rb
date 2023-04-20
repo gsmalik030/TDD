@@ -5,7 +5,7 @@ describe Solver do
 
   describe '#factorial' do
     it 'throw an error if input is negative number' do
-      expect(@solver.factorial(-1)).to raise_error(
+      expect{@solver.factorial(-1)}.to raise_error(
         'input can not be negative',
         RuntimeError,
       )
